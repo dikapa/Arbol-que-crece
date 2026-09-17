@@ -10,7 +10,7 @@ con pequeñas variaciones aleatorias para evitar que cada árbol sea perfectamen
 No intenta ser un simulador botánico. La idea era simplemente conseguir
 un árbol que pareciera suficientemente natural sin dibujar sus ramas manualmente.
 
-![Demostración](./Video.gif)
+![Demostración](./Vídeo.gif)
 ## ¿Cómo funciona?
 
 El árbol se genera mediante una función recursiva.
