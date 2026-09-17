@@ -17,14 +17,14 @@ class BeautifulNaturalTree:
         
         # estructura de datos para almacenar la información de cada rama antes de dibujarla
         self.tree_structure = []
-        # Parámetros iniciales: X, Y, Ángulo, Longitud Máxima, Grosor, Retraso para nacer
+        # Parámetros iniciales
         self.generate_tree_data(self.width / 2, self.height - 30, 90, 130, 14, start_time=0)
         self.canvas.bind("<Button-1>", self.on_click)
         self.animate()
 
     def generate_tree_data(self, x, y, angle, max_length, width, start_time):
         """Genera y almacena la estructura del árbol antes de dibujarlo"""
-        # Condición de parada para que no se sature el tope
+        # Condición de parada para que no se sature 
         if max_length < 7 or width < 1:
             return
 
@@ -45,8 +45,6 @@ class BeautifulNaturalTree:
         # El tiempo que tardará esta rama en crecer antes de que nazcan sus hijas
         growth_duration = max_length * 0.3 
         next_start_time = start_time + growth_duration
-
-        # --- LÓGICA DE RAMIFICACIÓN ALEATORIA Y NATURAL ---
         
         num_branches = random.choice([1, 2, 2, 3]) if width > 4 else random.choice([1, 2])
 
@@ -88,7 +86,7 @@ class BeautifulNaturalTree:
         if t < 0:
             return
 
-        # Velocidad de crecimiento de la rama (doble velocidad)
+        # Velocidad de crecimiento de la rama 
         speed = 3.0
         branch['current_len'] = min(branch['max_len'], t * speed)
 
@@ -100,15 +98,15 @@ class BeautifulNaturalTree:
         x_current = branch['x_start'] + branch['current_len'] * math.cos(rad)
         y_current = branch['y_start'] - branch['current_len'] * math.sin(rad)
 
-        # Paleta de colores natural: 
+        # Paleta de colores
         if branch['width'] > 7:
-            color = "#706760"  # Tronco principal
+            color = "#706760"  
         elif branch['width'] > 3:
-            color = "#49423c"  # Ramas medias
+            color = "#49423c" 
         elif branch['width'] > 1.5:
-            color = "#4f5546"  # Ramas delgadas / verde oliva
+            color = "#4f5546" 
         else:
-            color = "#616054"  # Brotes terminales / hojas claros
+            color = "#616054" 
 
         self.canvas.create_line(
             branch['x_start'], branch['y_start'], 
