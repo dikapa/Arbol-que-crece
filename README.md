@@ -36,3 +36,6 @@ En cada generación se aplican pequeñas variaciones aleatorias:
 Esto evita que el árbol tenga una estructura completamente simétrica.
 
 no se que mas agregar.
+:b
+adios.
+
